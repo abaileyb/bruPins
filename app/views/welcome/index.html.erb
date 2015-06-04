@@ -1,0 +1,11 @@
+<h1> All Boards </h1>
+
+<p> <strong> <%= link_to 'Add board', new_user_board_path(current_user) %>  </strong> </p>
+
+<% @boards.each do |board| %>
+
+	<%= link_to board.name, board_path(board) %> 
+
+
+<% end %>
+

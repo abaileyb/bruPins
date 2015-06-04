@@ -1,0 +1,17 @@
+<%= form_for ([current_user, @board])  do |f| %>
+
+
+<p>
+	<%= f.label :name %> <br>
+	<%= f.text_field :name %>
+</p>
+<p>
+	<%= f.label :description %> <br>
+	<%= f.text_field :description %>
+</p>
+<p>
+	<%= f.submit %>
+</p>
+
+
+<% end %>

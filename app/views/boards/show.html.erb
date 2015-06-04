@@ -1,0 +1,18 @@
+<h1> <%= @board.name %> </h1>
+
+<h3>Description: <%= @board.description %> </h3>
+
+
+<h1> Pins: </h1>
+<% @pins.each do | pin |%>
+	<p> 
+	<%= link_to pin.title, board_pin_path(@board,pin) %>
+	<img src=<%= pin.url %> >
+	</p>
+<% end %>
+
+<%= link_to 'New Pin', new_board_pin_path(@board) %> |
+<%= link_to 'Edit Board', edit_user_board_path(current_user, @board) %> |
+<%= link_to 'All Boards', welcome_index_path %> |
+<%= link_to 'Destroy', user_board_path(current_user, @board),
+			    method: :delete, data:{ confirm: "Seriously?" } %>

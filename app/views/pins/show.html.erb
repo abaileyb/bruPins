@@ -1,0 +1,12 @@
+<h1> <%= @pin.title %> </h1>
+
+<h3> <%= @pin.description %> </h3>
+<img src=<%= @pin.url %> >
+
+<br>
+
+
+<%= link_to 'Edit Pin', edit_board_pin_path(@board, @pin) %> |
+<%= link_to 'Destroy', board_pin_path(@board, @pin),
+			    method: :delete, data:{ confirm: "Seriously?" } %> |
+<%= link_to 'Board', board_path(@board) %>
